@@ -55,7 +55,7 @@ shinyServer(function(input, output) {
     
     p <- ggplot(melt(runModel()[,c("time","v")], id = "time")) +
       geom_line( aes(time, value, colour = variable) )  +
-      ylab("[variable]")                                
+      ylab("mV")                                
     
     print(p)
     

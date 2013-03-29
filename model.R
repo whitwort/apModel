@@ -21,7 +21,7 @@ parameters <- c(
   , eK    = -77
   , eL    = -54.4
     
-  # Axon parameters
+  # 
   , C     = 1
   , I     = 0
   
