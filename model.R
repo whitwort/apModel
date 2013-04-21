@@ -8,21 +8,22 @@ library(deSolve)
 # define the solver that we want to use
 solver <- ode
 
+# Constants
+# Maximum conductance values (x 10-3 mho/cm^2)
+gNa   = 120
+gK    = 36
+gL    = 0.3
+
+# Equilibrium potentials
+eNa   = 50
+eK    = -77
+eL    = -54.4
+
 # Model parameters
 parameters <- c(
-  
-  # Maximum conductance values (x 10-3 mho/cm^2)
-    gNa   = 120
-  , gK    = 36
-  , gL    = 0.3
     
-  # Equilibrium potentials
-  , eNa   = 50
-  , eK    = -77
-  , eL    = -54.4
-    
-  # 
-  , C     = 1
+  # Stimulation parameters
+    C     = 1
   , I     = 0
   
 )

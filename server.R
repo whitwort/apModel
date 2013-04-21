@@ -8,10 +8,6 @@ source("model.R", local = TRUE)
 # Define server logic required to generate the plot
 shinyServer(function(input, output) {
   
-  #Session store is a reactive values ~list
-  store              <- reactiveValues()
-  store$summaryData  <- data.frame()
-  
   # Capture input variables in a reactive expression
   runArgs   <- reactive({
     
