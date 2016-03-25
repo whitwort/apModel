@@ -26,11 +26,22 @@ modelInputs <- list(
     # state input boxes
   , lapply( names(state)
           , function(name) { 
-              numericInput( name
-                          , stateFormat(name)
-                          , state[name]
-                          , step = state[name] / 2
-                          )
+              # Hackery
+              if (name %in% c('n', 'h', 'm')) {
+                sliderInput( name
+                           , label = name
+                           , min = 0
+                           , max = 1
+                           , value = state[name]
+                           , step  = 0.001
+                           )
+              } else {
+                numericInput( name
+                            , stateFormat(name)
+                            , state[name]
+                            , step = state[name] / 2
+                            ) 
+              }
           })
     
     # parameter input boxes
